@@ -1,0 +1,55 @@
+﻿<Window x:Class="DongQuangHuyWPF.CRUDWindow.EditCustomerWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DongQuangHuyWPF.CRUDWindow"
+        mc:Ignorable="d"
+        Title="Chỉnh Sửa Hồ Sơ Khách Hàng" Height="450" Width="400"
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/> <!-- 0: Title -->
+            <RowDefinition Height="Auto"/> <!-- 1: Customer ID Label -->
+            <RowDefinition Height="Auto"/> <!-- 2: Customer ID TextBox -->
+            <RowDefinition Height="Auto"/> <!-- 3: Company Name Label -->
+            <RowDefinition Height="Auto"/> <!-- 4: Company Name TextBox -->
+            <RowDefinition Height="Auto"/> <!-- 5: Contact Name Label -->
+            <RowDefinition Height="Auto"/> <!-- 6: Contact Name TextBox -->
+            <RowDefinition Height="Auto"/> <!-- 7: Phone Label -->
+            <RowDefinition Height="Auto"/> <!-- 8: Phone TextBox -->
+            <RowDefinition Height="*"/>   <!-- 9: Filler space -->
+            <RowDefinition Height="Auto"/> <!-- 10: Buttons -->
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="0" Text="Chỉnh Sửa Thông Tin Khách Hàng" 
+                   FontSize="20" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,0,0,20" Grid.ColumnSpan="2"/>
+
+        <!-- Customer ID (Read-only) -->
+        <Label Grid.Row="1" Content="Mã Khách Hàng:"/>
+        <TextBox Grid.Row="2" Text="{Binding CustomerID}" 
+                 Margin="0,0,0,10" IsReadOnly="True" Background="#EEE"/>
+
+        <!-- Company Name -->
+        <Label Grid.Row="3" Content="Tên Công Ty:"/>
+        <TextBox Grid.Row="4" Text="{Binding CompanyName, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}" 
+                 Margin="0,0,0,10"/>
+
+        <!-- Contact Name -->
+        <Label Grid.Row="5" Content="Tên Người Liên Hệ:"/>
+        <TextBox Grid.Row="6" Text="{Binding ContactName, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}" 
+                 Margin="0,0,0,10"/>
+
+        <!-- Phone -->
+        <Label Grid.Row="7" Content="Số Điện Thoại:"/>
+        <TextBox Grid.Row="8" Text="{Binding Phone, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}" 
+                 Margin="0,0,0,10"/>
+
+        <!-- Buttons -->
+        <StackPanel Grid.Row="10" Orientation="Horizontal" HorizontalAlignment="Right">
+            <Button Content="Hủy" Width="80" Margin="0,0,10,0" Click="CancelButton_Click"/>
+            <Button Content="Lưu" Width="80" Click="SaveButton_Click" IsDefault="True"/>
+        </StackPanel>
+    </Grid>
+</Window>
