@@ -48,7 +48,7 @@ namespace DongQuangHuyWPF.Views
             var editCustomerWindow = new EditCustomerWindow(_viewModel.SelectedCustomer);
             if (editCustomerWindow.ShowDialog() == true)
             {
-                _viewModel.UpdateCustomer(editCustomerWindow.UpdatedCustomer);
+                _viewModel.UpdateCustomer(editCustomerWindow.OriginalCustomer);
                 MessageBox.Show("Cập nhật khách hàng thành công!", "Thông báo", MessageBoxButton.OK, MessageBoxImage.Information);
                 RefreshCustomerDataGrid();
             }

@@ -20,19 +20,13 @@ namespace DongQuangHuyWPF.CRUDWindow
     /// </summary>
     public partial class EditCustomerWindow : Window
     {
-        public Customer UpdatedCustomer { get; private set; }
+        public Customer OriginalCustomer { get; private set; }
 
         public EditCustomerWindow(Customer customer)
         {
             InitializeComponent();
-            UpdatedCustomer = new Customer
-            {
-                CustomerID = customer.CustomerID,
-                CompanyName = customer.CompanyName,
-                ContactName = customer.ContactName,
-                Phone = customer.Phone
-            };
-            DataContext = UpdatedCustomer;
+            OriginalCustomer = customer;
+            DataContext = OriginalCustomer;
         }
 
         private void SaveButton_Click(object sender, RoutedEventArgs e)
@@ -56,9 +50,9 @@ namespace DongQuangHuyWPF.CRUDWindow
 
         private bool IsValid()
         {
-            return !string.IsNullOrWhiteSpace(UpdatedCustomer.CompanyName) &&
-                   !string.IsNullOrWhiteSpace(UpdatedCustomer.ContactName) &&
-                   !string.IsNullOrWhiteSpace(UpdatedCustomer.Phone);
+            return !string.IsNullOrWhiteSpace(OriginalCustomer.CompanyName) &&
+                   !string.IsNullOrWhiteSpace(OriginalCustomer.ContactName) &&
+                   !string.IsNullOrWhiteSpace(OriginalCustomer.Phone);
         }
     }
 }

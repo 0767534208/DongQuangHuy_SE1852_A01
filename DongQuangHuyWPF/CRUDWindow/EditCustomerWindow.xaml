@@ -26,11 +26,6 @@
         <TextBlock Grid.Row="0" Text="Chỉnh Sửa Thông Tin Khách Hàng" 
                    FontSize="20" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,0,0,20" Grid.ColumnSpan="2"/>
 
-        <!-- Customer ID (Read-only) -->
-        <Label Grid.Row="1" Content="Mã Khách Hàng:"/>
-        <TextBox Grid.Row="2" Text="{Binding CustomerID}" 
-                 Margin="0,0,0,10" IsReadOnly="True" Background="#EEE"/>
-
         <!-- Company Name -->
         <Label Grid.Row="3" Content="Tên Công Ty:"/>
         <TextBox Grid.Row="4" Text="{Binding CompanyName, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}" 

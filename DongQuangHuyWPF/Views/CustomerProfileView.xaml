@@ -13,7 +13,6 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
@@ -24,22 +23,17 @@
         <TextBlock Grid.Row="0" Grid.ColumnSpan="2" Text="Thông Tin Hồ Sơ Cá Nhân" 
                    FontSize="24" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,0,0,20"/>
 
-        <TextBlock Grid.Row="1" Grid.Column="0" Text="Mã Khách Hàng:" FontWeight="Bold" Margin="0,0,10,5"/>
-        <TextBlock Grid.Row="1" Grid.Column="1" Text="{Binding CustomerID}" Margin="0,0,0,5"/>
+        <TextBlock Grid.Row="1" Grid.Column="0" Text="Tên Công Ty:" FontWeight="Bold" Margin="0,0,10,5"/>
+        <TextBlock Grid.Row="1" Grid.Column="1" Text="{Binding CompanyName}" Margin="0,0,0,5"/>
 
-        <TextBlock Grid.Row="2" Grid.Column="0" Text="Tên Công Ty:" FontWeight="Bold" Margin="0,0,10,5"/>
-        <TextBlock Grid.Row="2" Grid.Column="1" Text="{Binding CompanyName}" Margin="0,0,0,5"/>
+        <TextBlock Grid.Row="2" Grid.Column="0" Text="Tên Liên Hệ:" FontWeight="Bold" Margin="0,0,10,5"/>
+        <TextBlock Grid.Row="2" Grid.Column="1" Text="{Binding ContactName}" Margin="0,0,0,5"/>
 
-        <TextBlock Grid.Row="3" Grid.Column="0" Text="Tên Liên Hệ:" FontWeight="Bold" Margin="0,0,10,5"/>
-        <TextBlock Grid.Row="3" Grid.Column="1" Text="{Binding ContactName}" Margin="0,0,0,5"/>
+        <TextBlock Grid.Row="3" Grid.Column="0" Text="Số Điện Thoại:" FontWeight="Bold" Margin="0,0,10,5"/>
+        <TextBlock Grid.Row="3" Grid.Column="1" Text="{Binding Phone}" Margin="0,0,0,5"/>
 
-        <TextBlock Grid.Row="4" Grid.Column="0" Text="Số Điện Thoại:" FontWeight="Bold" Margin="0,0,10,5"/>
-        <TextBlock Grid.Row="4" Grid.Column="1" Text="{Binding Phone}" Margin="0,0,0,5"/>
-
-        <TextBlock Grid.Row="5" Grid.Column="0" Text="Địa Chỉ:" FontWeight="Bold" Margin="0,0,10,5"/>
-        <TextBlock Grid.Row="5" Grid.Column="1" Text="{Binding Address}" TextWrapping="Wrap" Margin="0,0,0,5"/>
-
-        <!-- Password is not displayed for security -->
+        <TextBlock Grid.Row="4" Grid.Column="0" Text="Địa Chỉ:" FontWeight="Bold" Margin="0,0,10,5"/>
+        <TextBlock Grid.Row="4" Grid.Column="1" Text="{Binding Address}" TextWrapping="Wrap" Margin="0,0,0,5"/>
 
     </Grid>
 </UserControl> 
